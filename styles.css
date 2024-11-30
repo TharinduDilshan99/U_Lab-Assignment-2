@@ -83,8 +83,8 @@ body {
     grid-area: video-container;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 5fr 0.101fr;
-    /* grid-template-rows: 5fr 0.3fr; */
+    grid-template-rows: 4.95fr 0.12fr;
+    /* grid-template-rows: 4.90fr 0.2fr; */
     grid-template-areas: 
      "short-video"
      "thumbnail"
@@ -122,10 +122,37 @@ body {
 
 .grid-container .video-container .thumbnail {
     grid-area: thumbnail;
-    background-color: #FCF404;
+    /* background-color: #FCF404; */
     border-radius: 10px;
+    padding: 0px;
+    margin: 0px;
+}
+
+
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0px 2px;
+    background-color: #D9D9D9;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    padding: 0px;
+
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
   
+.dot:hover {
+    background-color: #FC048C;
+}
+  
+
+
+
 .slider {
     grid-area: slider;
     align-items: center;
