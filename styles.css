@@ -120,6 +120,17 @@ body {
     object-fit: cover;
 }
 
+.top-left {
+    position: absolute;
+    top: 35px;
+    left: 43px;
+    font-size: 32px;
+    color: white;
+    font-style: normal;
+    font-weight: 600;
+    font-family: Arial, sans-serif;
+  }
+
 .grid-container .video-container .thumbnail {
     grid-area: thumbnail;
     /* background-color: #FCF404; */
