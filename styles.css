@@ -32,7 +32,7 @@ body {
     grid-template-columns: 3.10060976fr 1fr;
     grid-template-areas: 
      "header   header"
-     "video-container   slider"
+     "video-container   slider-container"
     ;
     gap: 20px 15px;
     /* padding: 40px; */
@@ -55,6 +55,10 @@ body {
     grid-area: header;
     background-color: #FC0404;
     border-radius: 10px;
+
+    /* padding: 69px; */
+    margin: 0px;
+
     padding: 30px;
 }
   
@@ -83,8 +87,7 @@ body {
     grid-area: video-container;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 4.95fr 0.12fr;
-    /* grid-template-rows: 4.90fr 0.2fr; */
+    grid-template-rows: 4.9fr 0.2fr;
     grid-template-areas: 
      "short-video"
      "thumbnail"
@@ -137,6 +140,9 @@ body {
     border-radius: 10px;
     padding: 0px;
     margin: 0px;
+
+    display: flex;
+    align-items: center;
 }
 
 
@@ -149,12 +155,12 @@ body {
     background-color: #D9D9D9;
     border-radius: 50%;
     display: inline-block;
-    transition: background-color 0.6s ease;
     padding: 0px;
 
     text-align: center;
     justify-content: center;
     align-items: center;
+    /* transform: translate(0%, 25%); */
 }
   
 .dot:hover {
@@ -162,14 +168,224 @@ body {
 }
   
 
-
-
-.slider {
-    grid-area: slider;
+/* .grid-container .slider-container {
+    grid-area: slider-container;
     align-items: center;
-    background-color: #04FC0C;
-    border-radius: 10px;
+    border-radius: 32px;
+    background: #151A22;
+
+} */
+
+
+
+
+
+
+
+
+.grid-container .slider-container {
+    grid-area: slider-container;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 0.468277946fr 4.9fr 0.3fr;
+    /* grid-template-rows: 0.468277946fr 5fr 0.181268882fr; */
+    grid-template-areas: 
+     "slider-header"
+     "slider-card"
+     "slider-btn"
+    ;
+    row-gap: 0px;
+    /* padding: 40px; */
+    /* padding: 0px; */
+    /* padding: 31px 30px 18px 30px; */
+    padding: 20px;
+    margin: 0px;
+    box-sizing: border-box; 
+
+    border-radius: 20px;
+    background: #151A22;
+    /* height: 100vh; */
 }
+
+.grid-container .slider-container .slider-item {
+    text-align: center;
+    /* justify-content: center; */
+    /* align-items: center; */
+    display: flex;
+}
+
+.grid-container .slider-container .slider-header {
+    grid-area: slider-header;
+    background-color: none;
+    justify-content: left;
+    margin: 0px 0px 20px 0px;
+    /* margin: 0px; */
+    padding: 0px;
+    /* width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden; */
+    /* border-radius: 20px; */
+
+    display: flex;
+    align-items: center;
+}
+
+.top-left-2 {
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    font-size: 24px;
+    color: white;
+    font-style: normal;
+    font-weight: 600;
+    font-family: Arial, sans-serif;
+
+    display: flex;
+    align-items: center;
+  }
+
+
+
+/* .grid-layout {
+    display: grid;
+    gap: 20px;
+    padding: 2rem 4%;
+    margin-top: 100px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+} */
+
+
+
+
+
+
+.grid-container .slider-container .slider-card {
+    grid-area: slider-card;
+    /* background-color: #FCF404; */
+    background-color: none;
+    padding: 0px;
+    margin: 0px;
+    display: grid;
+    gap: 20px;
+    /* padding: 2rem 4%; */
+    /* margin-top: 100px; */
+    /* grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); */
+
+    /* display: grid;
+    align-items: center;
+    grid-auto-flow: row; */
+    grid-auto-rows: 25%; /* play with this to change height of the children, 50% will fill half */
+    grid-template-columns: unset; /* do not set template columns and rows */
+    grid-template-rows: unset;
+    overflow: scroll;
+}
+
+
+.grid-container .slider-container .slider-card .card-layout {
+    /* max-width: 436px; */
+    /* max-height: 294px; */
+    justify-content: center;
+    align-items: flex-start;
+    /* gap: 12px; */
+    display: flex;
+    /* padding: 15px; */
+    position: relative;
+    border-radius: 10px;
+    background: rgba(33, 39, 46, 0.40);
+    box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.15);
+}
+
+.image-container{
+    /* width: 172px;
+    height: 200px; */
+    justify-content: center;
+    align-items: center; 
+
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.image-container img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.grid-container .slider-container .slider-btn {
+    grid-area: slider-btn;
+    /* background-color: none;
+    margin: 0px;
+    padding: 0px;
+    justify-content: center;
+    background-color: none;
+    padding: 0px; */
+
+
+    justify-content: center;
+    background-color: #FC04E3;
+    border-radius: 10px;
+    /* border-radius: 0px 0px 10px 10px; */
+    border-color: none;
+
+    /* position: relative; */
+    margin: 0px;
+    padding: 0px;
+    font-size: 18px;
+    color: white;
+    font-style: normal;
+    font-weight: 200;
+    font-family: Arial, sans-serif;
+
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+}
+
+.grid-container .slider-container .slider-btn:hover {
+    background-color: #750040;
+}
+
+/* .grid-container .slider-container .slider-btn .button{
+    justify-content: center;
+    background-color: #FC04E3;
+    border-radius: 10px;
+    border-color: none;
+
+    position: absolute;
+    margin: 0px;
+    padding: 5px 30px;
+    font-size: 20px;
+    color: white;
+    font-style: normal;
+    font-weight: 200;
+    font-family: Arial, sans-serif;
+} */
+
+
+
+
+
+
+
   
 
   /* @media (max-width: 768px) {
